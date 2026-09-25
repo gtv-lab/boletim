@@ -1,0 +1,174 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== Cores principais (variáveis) ===== */
+:root {
+  --azul: #1e5fa8;            /* cor principal */
+  --azul-claro: #e6f0fa;      /* fundo dos cards */
+  --cinza-claro: #f4f6f8;     /* fundo geral */
+  --cinza-borda: #d5dbe1;     /* bordas suaves */
+  --texto: #1f2937;           /* texto escuro */
+  --texto-suave: #556070;     /* textos secundários */
+}
+
+/* ===== Corpo da página ===== */
+body {
+  background-color: var(--cinza-claro);
+  color: var(--texto);
+  line-height: 1.5;
+  padding: 16px;
+}
+
+/* ===== Cabeçalho ===== */
+.cabecalho {
+  background-color: var(--azul);
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cabecalho h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.estudante {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+/* ===== Área principal ===== */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== Cards de resumo ===== */
+.cards-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background-color: var(--azul-claro);
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  margin-bottom: 6px;
+  font-weight: normal;
+}
+
+.card p {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--azul);
+}
+
+.card small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+
+/* ===== Área da tabela ===== */
+.tabela-area h2 {
+  font-size: 1.1rem;
+  color: var(--azul);
+  margin-bottom: 10px;
+}
+
+/* Rolagem horizontal em telas pequenas */
+.tabela-responsiva {
+  width: 100%;
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid var(--cinza-borda);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px; /* garante a rolagem no celular */
+}
+
+thead {
+  background-color: var(--azul);
+  color: #ffffff;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--cinza-borda);
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+tbody tr:hover {
+  background-color: #f0f6fc;
+}
+
+/* Cores das situações */
+.situacao-bom {
+  color: #1e7a3c;
+  font-weight: bold;
+}
+
+.situacao-atencao {
+  color: #b23a2e;
+  font-weight: bold;
+}
+
+.situacao-neutro {
+  color: var(--texto-suave);
+}
+
+/* ===== Rodapé ===== */
+.rodape {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+/* ===== Ajustes para telas pequenas ===== */
+@media (max-width: 480px) {
+  .cabecalho h1 {
+    font-size: 1.3rem;
+  }
+
+  .card p {
+    font-size: 1.2rem;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}
