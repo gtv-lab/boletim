@@ -14,6 +14,8 @@
   --cinza-borda: #d5dbe1;     /* bordas suaves */
   --texto: #1f2937;           /* texto escuro */
   --texto-suave: #556070;     /* textos secundários */
+  --erro: #b23a2e;            /* vermelho de erro */
+  --sucesso: #1e7a3c;         /* verde de sucesso */
 }
 
 /* ===== Corpo da página ===== */
@@ -54,6 +56,143 @@ body {
 .conteudo {
   max-width: 1100px;
   margin: 0 auto;
+}
+
+/* ===== Utilidades ===== */
+.oculto {
+  display: none !important;
+}
+
+/* ===== Área do PIN / Login ===== */
+.area-pin {
+  background-color: #ffffff;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 420px;
+  margin: 40px auto;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.area-pin h2 {
+  font-size: 1.2rem;
+  color: var(--azul);
+  margin-bottom: 8px;
+}
+
+.info-aluno {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  margin-bottom: 16px;
+}
+
+.formulario-pin {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.formulario-pin input {
+  padding: 10px 14px;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 160px;
+  text-align: center;
+}
+
+.formulario-pin input:focus {
+  outline: none;
+  border-color: var(--azul);
+}
+
+button {
+  background-color: var(--azul);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #164780;
+}
+
+.btn-secundario {
+  background-color: #e2e8f0;
+  color: var(--texto);
+}
+
+.btn-secundario:hover {
+  background-color: #cbd5e1;
+}
+
+.mensagem-status {
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.mensagem-status.erro {
+  color: var(--erro);
+}
+
+.mensagem-status.sucesso {
+  color: var(--sucesso);
+}
+
+/* ===== Ações do Boletim e Edição ===== */
+.acoes-boletim {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.area-edicao {
+  background-color: #ffffff;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.area-edicao h2 {
+  font-size: 1.1rem;
+  color: var(--azul);
+  margin-bottom: 4px;
+}
+
+.instrucoes-edicao {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  margin-bottom: 16px;
+}
+
+.area-edicao input {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid var(--cinza-borda);
+  border-radius: 4px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.area-edicao input.input-invalido {
+  border-color: var(--erro);
+  background-color: #fdf2f2;
+}
+
+.botoes-edicao {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 /* ===== Cards de resumo ===== */
@@ -170,5 +309,17 @@ tbody tr:hover {
   th, td {
     padding: 8px;
     font-size: 0.8rem;
+  }
+
+  .formulario-pin {
+    flex-direction: column;
+  }
+
+  .formulario-pin input {
+    width: 100%;
+  }
+
+  .area-edicao input {
+    width: 45px;
   }
 }
